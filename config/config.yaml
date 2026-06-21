@@ -1,0 +1,43 @@
+# Default runtime configuration.
+# Values here are overridden by matching environment variables in .env
+# (see config/settings.py for precedence logic).
+
+pipeline:
+  max_profiles_per_run: 25
+  min_delay_seconds: 60
+  max_delay_seconds: 200
+  followup_days: 14
+
+note:
+  char_limit_short: 200
+  char_limit_long: 300
+  max_review_retries: 2
+
+llm:
+  provider: nvidia
+  model: meta/llama-3.1-70b-instruct
+  temperature: 0.7
+  max_tokens: 150
+
+browser:
+  headless: false
+  slow_mo_ms: 150
+  viewport:
+    width: 1280
+    height: 900
+
+sheets:
+  worksheet_name: targets
+  required_columns:
+    - profile_url
+    - name_hint
+    - status
+    - note_used
+    - sent_timestamp
+    - followup_due
+    - final_status
+
+logging:
+  level: INFO
+  rotate_mb: 5
+  retain_days: 14

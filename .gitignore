@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+config/service_account.json
+core/outreach.db
+logs/
+.pytest_cache/
+*.egg-info/
+
+.idea/
